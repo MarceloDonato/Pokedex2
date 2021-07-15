@@ -1,5 +1,7 @@
 package com.marcelo.pokedex2.view
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
@@ -12,6 +14,10 @@ import com.marcelo.pokedex2.viewmodel.PokemonViewModel
 import com.marcelo.pokedex2.viewmodel.PokemonViewModelFactory
 
 class MainActivity : AppCompatActivity() {
+
+    companion object {
+        fun getStartIntent(context: Context) = Intent(context, MainActivity::class.java)
+    }
 
     private val recyclerView by lazy {
         findViewById<RecyclerView>(R.id.rvPokemons)
