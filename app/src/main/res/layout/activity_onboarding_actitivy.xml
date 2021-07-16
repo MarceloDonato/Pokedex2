@@ -57,7 +57,7 @@
         android:layout_width="@dimen/match_constraints"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/ultra_margin"
-        android:text="Verficar API"
+        android:text="Verificar API"
         android:textColor="@color/black_80"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline_end"
