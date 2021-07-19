@@ -14,7 +14,10 @@ class PokemonViewModel : ViewModel() {
         }).start()
     }
 
+
+
     private fun loadPokemons() {
+
         val pokemonsApiResult = PokemonRepository.listPokemons()
 
         pokemonsApiResult?.results?.let {

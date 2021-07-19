@@ -37,4 +37,6 @@
     <!--Card Recycler Apod-->
     <dimen name="card_detail_image">300dp</dimen>
 
+    <dimen name="pokedex_background">400dp</dimen>
+
 </resources>

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue"
     tools:context=".onboarding.OnboardingActitivy">
 
     <androidx.constraintlayout.widget.Guideline
@@ -21,11 +20,25 @@
         android:orientation="vertical"
         app:layout_constraintGuide_end="@dimen/guide_line_default" />
 
+    <ImageView
+        android:id="@+id/logo_pokemon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="400dp"
+        android:src="@drawable/logo_pokemon"
+        app:layout_constraintBottom_toBottomOf="@+id/loading"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/loading"
         android:layout_width="@dimen/match_constraints"
         android:layout_height="@dimen/match_constraints"
         android:layout_gravity="center"
+        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -42,7 +55,7 @@
         android:layout_width="@dimen/match_constraints"
         android:layout_height="wrap_content"
         android:text="@string/welcome_message"
-        android:textColor="@color/white"
+        android:textColor="@color/black_80"
         android:textSize="@dimen/x_title_size"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="552dp"
@@ -58,10 +71,12 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/ultra_margin"
         android:text="Verificar API"
-        android:textColor="@color/black_80"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline_end"
         app:layout_constraintStart_toStartOf="@+id/guideline_start" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

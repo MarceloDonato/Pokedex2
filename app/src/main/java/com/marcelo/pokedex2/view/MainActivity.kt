@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,6 +14,7 @@ import com.marcelo.pokedex2.R
 import com.marcelo.pokedex2.domain.Pokemon
 import com.marcelo.pokedex2.viewmodel.PokemonViewModel
 import com.marcelo.pokedex2.viewmodel.PokemonViewModelFactory
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,7 +41,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadRecyclerView(pokemons: List<Pokemon?>) {
+
+        loader_pokemon.visibility = VISIBLE
+
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = PokemonAdapter(pokemons)
+
+        loader_pokemon.visibility = GONE
     }
 }

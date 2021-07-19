@@ -9,10 +9,24 @@
         android:id="@+id/rvPokemons"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/pokemon_item" />
+        tools:listitem="@layout/pokemon_item"
+
+        />
+
+    <include
+        android:id="@+id/loader_pokemon"
+        layout="@layout/loader_api"
+        android:layout_width="@dimen/match_constraints"
+        android:layout_height="@dimen/match_constraints"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
