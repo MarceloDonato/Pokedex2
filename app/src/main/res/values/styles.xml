@@ -22,4 +22,10 @@
         <item name="android:fitsSystemWindows">true</item>
     </style>
 
+    <style name="AppTheme.Onboarding" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
 </resources>

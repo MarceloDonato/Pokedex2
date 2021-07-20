@@ -1,6 +1,6 @@
 package com.marcelo.pokedex2.splash
 
-import android.animation.Animator
+
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,7 +8,6 @@ import android.os.Handler
 import androidx.core.content.ContextCompat
 import com.marcelo.pokedex2.R
 import com.marcelo.pokedex2.onboarding.OnboardingActitivy
-import com.marcelo.pokedex2.view.MainActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
@@ -18,6 +17,7 @@ class SplashActivity : AppCompatActivity() {
         R.drawable.time2,
         R.drawable.time3
     )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)

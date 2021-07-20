@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fundo_pokemon"
     tools:context=".onboarding.OnboardingActitivy">
 
     <androidx.constraintlayout.widget.Guideline
@@ -54,8 +55,10 @@
         android:layout_marginBottom="20dp"
         android:layout_width="@dimen/match_constraints"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="@string/welcome_message"
-        android:textColor="@color/black_80"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         android:textSize="@dimen/x_title_size"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="552dp"
