@@ -7,10 +7,10 @@ import android.os.Bundle
 import com.marcelo.pokedex2.R
 
 
-class PokemonDetails : AppCompatActivity() {
+class PokemonDetailsActivity : AppCompatActivity() {
 
     companion object {
-        fun getStartIntent(context: Context) = Intent(context, PokemonDetails::class.java)
+        fun getStartIntent(context: Context) = Intent(context, PokemonDetailsActivity::class.java)
     }
 
 

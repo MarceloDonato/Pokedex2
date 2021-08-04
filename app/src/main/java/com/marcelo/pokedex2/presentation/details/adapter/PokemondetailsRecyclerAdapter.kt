@@ -1,11 +1,14 @@
-package com.marcelo.presentation.details.adapter
+package com.marcelo.pokedex2.presentation.details.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.marcelo.pokedex2.R
-import com.marcelo.presentation.base.BaseRecyclerAdapter
+import com.marcelo.pokedex2.presentation.base.BaseRecyclerAdapter
+import kotlinx.android.synthetic.main.itens_details_rv.view.*
 
 class PokemondetailsRecyclerAdapter :
     BaseRecyclerAdapter<String?, PokemondetailsRecyclerAdapter.ViewHolder>() {
@@ -13,6 +16,7 @@ class PokemondetailsRecyclerAdapter :
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         mData[position]?.let { viewHolder.bind(it, position) }
+
     }
 
 
@@ -30,7 +34,10 @@ class PokemondetailsRecyclerAdapter :
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(pokemon: String, position: Int) {
+
+
             itemView.apply {
+                Glide.with(itemView.context).load(pokemon.let {  })
 
             }
         }

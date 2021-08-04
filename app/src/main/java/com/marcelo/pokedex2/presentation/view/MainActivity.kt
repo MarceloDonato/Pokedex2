@@ -1,4 +1,4 @@
-package com.marcelo.presentation.view
+package com.marcelo.pokedex2.presentation.view
 
 import android.content.Context
 import android.content.Intent
@@ -8,12 +8,10 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.marcelo.pokedex2.R
 import com.marcelo.pokedex2.domain.Pokemon
-import com.marcelo.pokedex2.viewmodel.PokemonViewModel
-import com.marcelo.pokedex2.viewmodel.PokemonViewModelFactory
+import com.marcelo.pokedex2.presentation.view.viewmodel.PokemonViewModel
+import com.marcelo.pokedex2.presentation.view.viewmodel.PokemonViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -22,9 +20,10 @@ class MainActivity : AppCompatActivity() {
         fun getStartIntent(context: Context) = Intent(context, MainActivity::class.java)
     }
 
-    private val recyclerView by lazy {
-        findViewById<RecyclerView>(R.id.rvPokemons)
+    private val adapterList: PokemonAdapter by lazy {
+        PokemonAdapter()
     }
+
 
     private val viewModel by lazy {
         ViewModelProvider(this, PokemonViewModelFactory())
@@ -44,8 +43,13 @@ class MainActivity : AppCompatActivity() {
 
         loader_pokemon.visibility = VISIBLE
 
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = PokemonAdapter(pokemons)
+        adapterList.data = pokemons.toMutableList()
+        rvPokemons.apply {
+            adapter = adapterList
+            adapterList.onItemClickListener = {
+               // startActivity(it?.let { pokemons -> PokemonDetailsActivity.getStartIntent(context, pokemons) })
+            }
+        }
 
         loader_pokemon.visibility = GONE
     }

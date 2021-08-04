@@ -1,4 +1,4 @@
-package com.marcelo.presentation.base
+package com.marcelo.pokedex2.presentation.base
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

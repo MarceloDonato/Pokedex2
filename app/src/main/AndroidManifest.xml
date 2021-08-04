@@ -11,18 +11,18 @@
         android:roundIcon="@drawable/icone_pokedex"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".onboarding.OnboardingActitivy"></activity>
-        <activity android:name=".splash.SplashActivity"
-            android:theme="@style/AppTheme.Splash"
-            >
-
+        <activity android:name="com.marcelo.pokedex2.presentation.details.view.PokemonDetailsActivity"></activity>
+        <activity android:name="com.marcelo.pokedex2.presentation.onboarding.OnboardingActitivy" />
+        <activity
+            android:name="com.marcelo.pokedex2.presentation.splash.SplashActivity"
+            android:theme="@style/AppTheme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.MainActivity"></activity>
+        <activity android:name="com.marcelo.pokedex2.presentation.view.MainActivity" />
     </application>
 
 </manifest>

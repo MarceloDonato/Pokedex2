@@ -1,4 +1,4 @@
-package com.marcelo.pokedex2.viewmodel
+package com.marcelo.pokedex2.presentation.view.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

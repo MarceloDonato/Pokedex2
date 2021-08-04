@@ -1,56 +1,48 @@
-package com.marcelo.presentation.view
+package com.marcelo.pokedex2.presentation.view
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.marcelo.pokedex2.R
 import com.marcelo.pokedex2.domain.Pokemon
+import com.marcelo.pokedex2.presentation.base.BaseRecyclerAdapter
 import kotlinx.android.synthetic.main.pokemon_item.view.*
 
-class PokemonAdapter(
-    private val items: List<Pokemon?>
-) : RecyclerView.Adapter<PokemonAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.pokemon_item, parent, false)
+class PokemonAdapter :
+    BaseRecyclerAdapter<Pokemon?, PokemonAdapter.ViewHolder>() {
 
-        return ViewHolder(view)
+
+    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
+        mData[position]?.let { viewHolder.bind(it, position) }
+
     }
 
-    override fun getItemCount() = items.size
+    override fun validateDate() = false
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = items[position]
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int) = ViewHolder(
+        LayoutInflater.from(viewGroup.context).inflate(
+            (R.layout.pokemon_item), viewGroup,
+            false
+        )
+    )
 
-        holder.bindView(item)
-    }
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bindView(item: Pokemon?) = with(itemView) {
-            val ivPokemon = findViewById<ImageView>(R.id.ivPokemon)
-
-            val tvName = findViewById<TextView>(R.id.tvName)
+        fun bind(pokemon: Pokemon, position: Int) {
 
             itemView.apply {
+                Glide.with(itemView.context).load(pokemon.imageUrl).into(ivPokemon)
+                tvName.text = pokemon.formattedName
 
-                item?.let {
-                    Glide.with(itemView.context).load(it.imageUrl).into(ivPokemon)
-
-                    tvName.text = item.formattedName
-
-                    container.setOnClickListener {
-
-                    }
-
+                container.setOnClickListener {
+                    onItemClickListener?.invoke(pokemon)
                 }
-            }
 
+
+            }
         }
     }
-
-    fun validateDate() = false
 }

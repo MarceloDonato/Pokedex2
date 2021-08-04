@@ -1,4 +1,4 @@
-package com.marcelo.pokedex2.splash
+package com.marcelo.pokedex2.presentation.splash
 
 
 import android.content.Context
@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.os.Handler
 import androidx.core.content.ContextCompat
 import com.marcelo.pokedex2.R
-import com.marcelo.pokedex2.onboarding.OnboardingActitivy
+import com.marcelo.pokedex2.presentation.onboarding.OnboardingActitivy
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
