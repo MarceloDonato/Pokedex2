@@ -1,4 +1,4 @@
-package com.marcelo.pokedex2.view
+package com.marcelo.presentation.view
 
 import android.content.Context
 import android.content.Intent

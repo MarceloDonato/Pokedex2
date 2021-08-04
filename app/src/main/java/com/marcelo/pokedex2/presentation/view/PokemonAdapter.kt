@@ -1,4 +1,4 @@
-package com.marcelo.pokedex2.view
+package com.marcelo.presentation.view
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.marcelo.pokedex2.R
 import com.marcelo.pokedex2.domain.Pokemon
+import kotlinx.android.synthetic.main.pokemon_item.view.*
 
 class PokemonAdapter(
     private val items: List<Pokemon?>
@@ -34,14 +35,22 @@ class PokemonAdapter(
 
             val tvName = findViewById<TextView>(R.id.tvName)
 
+            itemView.apply {
 
-            item?.let {
-                Glide.with(itemView.context).load(it.imageUrl).into(ivPokemon)
+                item?.let {
+                    Glide.with(itemView.context).load(it.imageUrl).into(ivPokemon)
 
+                    tvName.text = item.formattedName
 
-                tvName.text = item.formattedName
+                    container.setOnClickListener {
 
+                    }
+
+                }
             }
+
         }
     }
+
+    fun validateDate() = false
 }
