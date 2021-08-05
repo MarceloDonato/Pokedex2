@@ -33,7 +33,7 @@
         app:srcCompat="@drawable/charmander" />
 
     <TextView
-        android:id="@+id/pokemonName"
+        android:id="@+id/pokemonName2"
         android:layout_width="@dimen/match_constraints"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -53,7 +53,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline_end"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/pokemonName"
+        app:layout_constraintTop_toBottomOf="@+id/pokemonName2"
         tools:text="PICHACU" />
 
     <TextView

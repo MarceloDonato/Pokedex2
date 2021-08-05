@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.marcelo.pokedex2.R
 import com.marcelo.pokedex2.presentation.base.BaseRecyclerAdapter
 import kotlinx.android.synthetic.main.itens_details_rv.view.*
+import kotlinx.android.synthetic.main.pokemon_item.view.*
 
 class PokemondetailsRecyclerAdapter :
     BaseRecyclerAdapter<String?, PokemondetailsRecyclerAdapter.ViewHolder>() {
@@ -35,12 +36,10 @@ class PokemondetailsRecyclerAdapter :
 
         fun bind(pokemon: String, position: Int) {
 
-
             itemView.apply {
-                Glide.with(itemView.context).load(pokemon.let {  })
 
             }
+
         }
     }
-
 }

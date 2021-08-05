@@ -35,7 +35,7 @@ class PokemonAdapter :
 
             itemView.apply {
                 Glide.with(itemView.context).load(pokemon.imageUrl).into(ivPokemon)
-                tvName.text = pokemon.formattedName
+                tvName.text = pokemon.name
 
                 container.setOnClickListener {
                     onItemClickListener?.invoke(pokemon)

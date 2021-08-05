@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.marcelo.pokedex2.R
 import com.marcelo.pokedex2.domain.Pokemon
+import com.marcelo.pokedex2.presentation.details.view.PokemonDetailsActivity
 import com.marcelo.pokedex2.presentation.view.viewmodel.PokemonViewModel
 import com.marcelo.pokedex2.presentation.view.viewmodel.PokemonViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.*
@@ -39,15 +40,16 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun loadRecyclerView(pokemons: List<Pokemon?>) {
+    private fun loadRecyclerView( pokemons: List<Pokemon?>) {
 
         loader_pokemon.visibility = VISIBLE
 
         adapterList.data = pokemons.toMutableList()
         rvPokemons.apply {
             adapter = adapterList
+            isFocusable = false
             adapterList.onItemClickListener = {
-               // startActivity(it?.let { pokemons -> PokemonDetailsActivity.getStartIntent(context, pokemons) })
+                startActivity(it?.let { pokemons -> PokemonDetailsActivity.getStartIntent(context, pokemons) })
             }
         }
 
