@@ -30,6 +30,7 @@ class PokemonViewModel : ViewModel() {
 
                 pokemonApiResult?.let {
                     Pokemon(
+                     //   pokemonApiResult.
                         pokemonApiResult.id,
                         pokemonApiResult.name,
                         pokemonApiResult.types.map { type ->

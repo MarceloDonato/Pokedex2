@@ -4,9 +4,11 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.bumptech.glide.Glide
 import com.marcelo.pokedex2.R
 import com.marcelo.pokedex2.domain.Pokemon
+import com.marcelo.pokedex2.domain.convertValue
 import com.marcelo.pokedex2.mechanism.utils.EXTRA_ID
 import kotlinx.android.synthetic.main.activity_pokemon_details.*
 import kotlinx.android.synthetic.main.pokemon_item.view.*
@@ -36,6 +38,15 @@ class PokemonDetailsActivity : AppCompatActivity() {
 
             Glide.with(this).load(it.imageUrl).into(ivPokemon2)
             pokemonName.text = it.name
+            tvType1.text = it.types[0].name
+            if (it.types.size > 1) {
+                tvType2.text = it.types[1].name
+            } else {
+                tvType2.visibility = View.GONE
+            }
+
+     //       height.text = getString(R.string.pokemon_height, convertValue(it.height))
+//            weight.text = getString(R.string.pokemon_weight, convertValue(it.weight))
 
         }
     }

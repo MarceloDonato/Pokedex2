@@ -2,7 +2,7 @@ package com.marcelo.pokedex2.api.model
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
+
 
 object PokemonRepository {
     private val service: PokemonService

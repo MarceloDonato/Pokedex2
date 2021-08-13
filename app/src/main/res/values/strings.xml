@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Pokedex</string>
     <string name="welcome_message">Aplicativo construído utilizando a API do Pokémon com a intenção de aprender a utilizar o consumo de API, venha conferir como o projeto ficou!</string>
+
+    <string name="pokemon_height">%s m</string>
+    <string name="pokemon_weight">%s kg</string>
+
 </resources>
