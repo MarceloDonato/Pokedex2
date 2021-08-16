@@ -17,7 +17,9 @@ data class PokemonResult(
 data class PokemonApiResult(
     val id: Int,
     val name: String,
-    val types: List<PokemonTypeSlot>
+    val types: List<PokemonTypeSlot>,
+    val height: Int?,
+    val weight: Int?
 )
 
 data class PokemonTypeSlot(

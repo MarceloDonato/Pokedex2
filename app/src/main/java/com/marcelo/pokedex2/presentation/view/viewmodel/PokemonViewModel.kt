@@ -30,7 +30,8 @@ class PokemonViewModel : ViewModel() {
 
                 pokemonApiResult?.let {
                     Pokemon(
-                     //   pokemonApiResult.
+                        pokemonApiResult.weight,
+                      pokemonApiResult.height,
                         pokemonApiResult.id,
                         pokemonApiResult.name,
                         pokemonApiResult.types.map { type ->

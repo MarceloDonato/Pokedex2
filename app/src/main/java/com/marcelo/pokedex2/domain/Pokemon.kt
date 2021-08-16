@@ -6,18 +6,18 @@ import java.io.Serializable
 import java.math.RoundingMode
 import java.text.DecimalFormat
 
-data class Pokemon (
-   // @SerializedName("height") val height: Int?,
+data class Pokemon(
+    @SerializedName("weight") val weight: Int?,
+    @SerializedName("height") val height: Int?,
     @SerializedName("number") val number: Int,
-    @SerializedName("name")val name: String,
+    @SerializedName("name") val name: String,
     @SerializedName("types") val types: List<PokemonType>
 
-        ) :Serializable
-{
+) : Serializable {
 
-  //  val formattedName = name.capitalize()
+    //  val formattedName = name.capitalize()
 
-    val formattedNumber = number.toString().padStart(3,'0')
+    val formattedNumber = number.toString().padStart(3, '0')
 
     val imageUrl = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/$formattedNumber.png"
 }

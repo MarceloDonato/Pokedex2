@@ -28,8 +28,12 @@ class PokemonDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pokemon_details)
-
+        clickListeners()
         receiveData()
+    }
+
+    private fun clickListeners() {
+        back.setOnClickListener { finish() }
     }
 
     private fun receiveData() {
@@ -45,8 +49,8 @@ class PokemonDetailsActivity : AppCompatActivity() {
                 tvType2.visibility = View.GONE
             }
 
-     //       height.text = getString(R.string.pokemon_height, convertValue(it.height))
-//            weight.text = getString(R.string.pokemon_weight, convertValue(it.weight))
+            height.text = getString(R.string.pokemon_height, convertValue(it.height))
+            weight.text = getString(R.string.pokemon_weight, convertValue(it.weight))
 
         }
     }
