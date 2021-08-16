@@ -11,6 +11,8 @@ import com.marcelo.pokedex2.domain.Pokemon
 import com.marcelo.pokedex2.domain.convertValue
 import com.marcelo.pokedex2.mechanism.utils.EXTRA_ID
 import kotlinx.android.synthetic.main.activity_pokemon_details.*
+import kotlinx.android.synthetic.main.include_details_image.*
+import kotlinx.android.synthetic.main.include_details_text.*
 import kotlinx.android.synthetic.main.pokemon_item.view.*
 
 
